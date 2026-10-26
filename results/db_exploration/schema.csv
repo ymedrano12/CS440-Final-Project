@@ -1,0 +1,227 @@
+cid,name,type,notnull,dflt_value,pk
+0,Repo Name,TEXT,0,,0
+1,PR #,INT,0,,0
+2,issue text,TEXT,0,,0
+3,issue description,TEXT,0,,0
+4,created_at,TEXT,0,,0
+5,closed_at,TEXT,0,,0
+6,userlogin,TEXT,0,,0
+7,author_name,TEXT,0,,0
+8,most_recent_commit,TEXT,0,,0
+9,Application,,0,,0
+10,Application-Integration,,0,,0
+11,Application-Plugin Management,,0,,0
+12,Application-User Customization,,0,,0
+13,Application-App Configuration,,0,,0
+14,Application-Version Control,,0,,0
+15,Application-Compatibility Checks,,0,,0
+16,Application Performance Manager,,0,,0
+17,Application Performance Manager-Performance Monitoring,,0,,0
+18,Application Performance Manager-Resource Allocation,,0,,0
+19,Application Performance Manager-Error Detection,,0,,0
+20,Application Performance Manager-Load Balancing,,0,,0
+21,Application Performance Manager-Traffic Management,,0,,0
+22,Application Performance Manager-Diagnostic Tools,,0,,0
+23,Big Data,,0,,0
+24,Big Data-Data Processing,,0,,0
+25,Big Data-Data Storage,,0,,0
+26,Big Data-Data Analysis,,0,,0
+27,Big Data-Real-Time Processing,,0,,0
+28,Big Data-Batch Processing,,0,,0
+29,Big Data-Data Visualization,,0,,0
+30,Cloud,,0,,0
+31,Cloud-Resource Management,,0,,0
+32,Cloud-Virtualization,,0,,0
+33,Cloud-Scalability Solutions,,0,,0
+34,Cloud-Cloud Security,,0,,0
+35,Cloud-Data Migration,,0,,0
+36,Cloud-Service Configuration,,0,,0
+37,Computer Graphics,,0,,0
+38,Computer Graphics-Image Rendering,,0,,0
+39,Computer Graphics-Animation,,0,,0
+40,Computer Graphics-Modeling,,0,,0
+41,Computer Graphics-Texture Mapping,,0,,0
+42,Computer Graphics-Visual Effects,,0,,0
+43,Computer Graphics-Graphics Optimization,,0,,0
+44,Data Structure,,0,,0
+45,Data Structure-Linear Structures,,0,,0
+46,Data Structure-Tree Structures,,0,,0
+47,Data Structure-Graph Structures,,0,,0
+48,Data Structure-Data Sorting,,0,,0
+49,Data Structure-Search Algorithms,,0,,0
+50,Data Structure-Data Manipulation,,0,,0
+51,Databases,,0,,0
+52,Databases-Query Execution,,0,,0
+53,Databases-Transaction Management,,0,,0
+54,Databases-Schema Design,,0,,0
+55,Databases-Database Security,,0,,0
+56,Databases-Backup and Recovery,,0,,0
+57,Databases-Database Optimization,,0,,0
+58,Software Development and IT Operations,,0,,0
+59,Software Development and IT Operations-Continuous Integration,,0,,0
+60,Software Development and IT Operations-Continuous Deployment,,0,,0
+61,Software Development and IT Operations-Automated Testing,,0,,0
+62,Software Development and IT Operations-Configuration Management,,0,,0
+63,Software Development and IT Operations-Version Control,,0,,0
+64,Software Development and IT Operations-Monitoring and Logging,,0,,0
+65,Error Handling,,0,,0
+66,Error Handling-Exception Handling,,0,,0
+67,Error Handling-Error Logging,,0,,0
+68,Error Handling-Fault Tolerance,,0,,0
+69,Error Handling-Debugging Tools,,0,,0
+70,Error Handling-User Notification,,0,,0
+71,Error Handling-Error Prevention,,0,,0
+72,Event Handling,,0,,0
+73,Event Handling-User Interactions,,0,,0
+74,Event Handling-System Events,,0,,0
+75,Event Handling-Event Logging,,0,,0
+76,Event Handling-Event Driven Processing,,0,,0
+77,Event Handling-Notifications,,0,,0
+78,Event Handling-Asynchronous Processing,,0,,0
+79,Geographic Information System,,0,,0
+80,Geographic Information System-Mapping,,0,,0
+81,Geographic Information System-Spatial Analysis,,0,,0
+82,Geographic Information System-Data Collection,,0,,0
+83,Geographic Information System-Geographic Visualization,,0,,0
+84,Geographic Information System-Location Services,,0,,0
+85,Geographic Information System-Environmental Modeling,,0,,0
+86,Input-Output,,0,,0
+87,Input-Output-Data Reading,,0,,0
+88,Input-Output-Data Writing,,0,,0
+89,Input-Output-Stream Management,,0,,0
+90,Input-Output-Buffering Strategies,,0,,0
+91,Input-Output-File Management,,0,,0
+92,Input-Output-Network IO,,0,,0
+93,Interpreter,,0,,0
+94,Interpreter-Script Execution,,0,,0
+95,Interpreter-Code Translation,,0,,0
+96,Interpreter-Memory Management,,0,,0
+97,Interpreter-Syntax Analysis,,0,,0
+98,Interpreter-Optimization,,0,,0
+99,Interpreter-Debugging,,0,,0
+100,Internationalization,,0,,0
+101,Internationalization-Localization,,0,,0
+102,Internationalization-Language Support,,0,,0
+103,Internationalization-Cultural Adaptation,,0,,0
+104,Internationalization-Currency Conversion,,0,,0
+105,Internationalization-Date/Time Formatting,,0,,0
+106,Internationalization-Right-to-Left Layouts,,0,,0
+107,Logic,,0,,0
+108,Logic-Control Structures,,0,,0
+109,Logic-Algorithm Implementation,,0,,0
+110,Logic-Logic Optimization,,0,,0
+111,Logic-Validation Checks,,0,,0
+112,Logic-Rule Processing,,0,,0
+113,Logic-Decision Making,,0,,0
+114,Language,,0,,0
+115,Language-Syntax Features,,0,,0
+116,Language-Compiler/Interpreter Enhancements,,0,,0
+117,Language-Runtime Optimization,,0,,0
+118,Language-Standard Libraries,,0,,0
+119,Language-Language Extensions,,0,,0
+120,Language-Type Systems,,0,,0
+121,Logging,,0,,0
+122,Logging-Event Logging,,0,,0
+123,Logging-System Monitoring,,0,,0
+124,Logging-Performance Tracking,,0,,0
+125,Logging-Error Logs,,0,,0
+126,Logging-User Activity Logs,,0,,0
+127,Logging-Audit Trails,,0,,0
+128,Machine Learning,,0,,0
+129,Machine Learning-Training Models,,0,,0
+130,Machine Learning-Prediction,,0,,0
+131,Machine Learning-Data Preprocessing,,0,,0
+132,Machine Learning-Feature Extraction,,0,,0
+133,Machine Learning-Model Evaluation,,0,,0
+134,Machine Learning-Deployment,,0,,0
+135,Microservices/Services,,0,,0
+136,Microservices/Services-Service Discovery,,0,,0
+137,Microservices/Services-Load Balancing,,0,,0
+138,Microservices/Services-API Gateway,,0,,0
+139,Microservices/Services-Service Communication,,0,,0
+140,Microservices/Services-Fault Tolerance,,0,,0
+141,Microservices/Services-Service Deployment,,0,,0
+142,Multimedia,,0,,0
+143,Multimedia-Media Playback,,0,,0
+144,Multimedia-Media Editing,,0,,0
+145,Multimedia-Encoding and Decoding,,0,,0
+146,Multimedia-Streaming,,0,,0
+147,Multimedia-Content Delivery,,0,,0
+148,Multimedia-Media Storage,,0,,0
+149,Multi-Thread,,0,,0
+150,Multi-Thread-Concurrency Control,,0,,0
+151,Multi-Thread-Synchronization,,0,,0
+152,Multi-Thread-Thread Safety,,0,,0
+153,Multi-Thread-Parallel Processing,,0,,0
+154,Multi-Thread-Resource Sharing,,0,,0
+155,Multi-Thread-Deadlock Resolution,,0,,0
+156,Natural Language Processing,,0,,0
+157,Natural Language Processing-Text Analysis,,0,,0
+158,Natural Language Processing-Speech Recognition,,0,,0
+159,Natural Language Processing-Language Generation,,0,,0
+160,Natural Language Processing-Sentiment Analysis,,0,,0
+161,Natural Language Processing-Machine Translation,,0,,0
+162,Natural Language Processing-Chatbot Interfaces,,0,,0
+163,Network,,0,,0
+164,Network-Protocol Implementation,,0,,0
+165,Network-Connection Management,,0,,0
+166,Network-Data Transmission,,0,,0
+167,Network-Network Security,,0,,0
+168,Network-Bandwidth Optimization,,0,,0
+169,Network-Network Monitoring,,0,,0
+170,Operating System,,0,,0
+171,Operating System-Process Management,,0,,0
+172,Operating System-Memory Management,,0,,0
+173,Operating System-Device Drivers,,0,,0
+174,Operating System-File Systems,,0,,0
+175,Operating System-User Interface,,0,,0
+176,Operating System-System Security,,0,,0
+177,Parser,,0,,0
+178,Parser-Syntax Parsing,,0,,0
+179,Parser-Error Recovery,,0,,0
+180,Parser-Data Conversion,,0,,0
+181,Parser-Optimization,,0,,0
+182,Parser-Code Generation,,0,,0
+183,Parser-Validation,,0,,0
+184,Search,,0,,0
+185,Search-Indexing,,0,,0
+186,Search-Query Processing,,0,,0
+187,Search-Ranking,,0,,0
+188,Search-Optimization,,0,,0
+189,Search-Caching,,0,,0
+190,Search-Personalization,,0,,0
+191,Security,,0,,0
+192,Security-Authentication,,0,,0
+193,Security-Authorization,,0,,0
+194,Security-Encryption,,0,,0
+195,Security-Intrusion Detection,,0,,0
+196,Security-Compliance,,0,,0
+197,Security-Data Integrity,,0,,0
+198,Setup,,0,,0
+199,Setup-Installation,,0,,0
+200,Setup-Configuration,,0,,0
+201,Setup-System Requirements,,0,,0
+202,Setup-Update Management,,0,,0
+203,Setup-Licensing,,0,,0
+204,Setup-Environment Setup,,0,,0
+205,User Interface,,0,,0
+206,User Interface-Layout Design,,0,,0
+207,User Interface-Interaction Design,,0,,0
+208,User Interface-Accessibility,,0,,0
+209,User Interface-Animation,,0,,0
+210,User Interface-Responsive Design,,0,,0
+211,User Interface-User Feedback,,0,,0
+212,Utility,,0,,0
+213,Utility-Data Conversion,,0,,0
+214,Utility-System Tools,,0,,0
+215,Utility-Automation Scripts,,0,,0
+216,Utility-Performance Tools,,0,,0
+217,Utility-Diagnostic Utilities,,0,,0
+218,Utility-Backup Tools,,0,,0
+219,Test,,0,,0
+220,Test-Unit Testing,,0,,0
+221,Test-Integration Testing,,0,,0
+222,Test-Performance Testing,,0,,0
+223,Test-Security Testing,,0,,0
+224,Test-Usability Testing,,0,,0
+225,Test-Regression Testing,,0,,0

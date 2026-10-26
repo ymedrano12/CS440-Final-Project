@@ -17,7 +17,7 @@ def get_db_path(cli_path: str | None = None) -> Path:
     if cli_path:
         path, source = Path(cli_path), "command-line argument"
     elif(os.environ.get(ENV_VAR)):
-        path, source = Path(os.environ.get[ENV_VAR]), f"{ENV_VAR} environment variable"
+        path, source = Path(os.environ[ENV_VAR]), f"{ENV_VAR} environment variable"
     else:
         path, source = DEFAULT_DB, "default location"
 
@@ -29,7 +29,7 @@ def get_db_path(cli_path: str | None = None) -> Path:
             f"(path came from the {source})\n"
             f"Fix it by setting {ENV_VAR}, or ensure file is at {DEFAULT_DB}")
     
-    return path, source
+    return path
 
 def connect(cli_path: str | None = None) -> sqlite3.Connection:
     path = get_db_path(cli_path)
@@ -47,6 +47,8 @@ if __name__ == "__main__":
     print(f"Using database: {get_db_path(arg)}")
     con = connect(arg)
     print(pd.read_sql_query(
-        "SELECT name, type FROM sqlite_master WHERE type IN ('table', 'view')"),
-            con)
+            "SELECT name, type FROM sqlite_master WHERE type IN ('table', 'view')",
+            con,
+        )
+    )
     con.close()

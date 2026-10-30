@@ -1,0 +1,15 @@
+Rows after preparation: 7154
+Source label columns: 217
+Extracting TF-IDF features from the complete dataset...
+C:\Users\Catrina\OneDrive\Desktop\CS440\CS440-Final-Project\competition_baseline\main.py:91: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  X_text["combined_text"] = (
+Transformed label columns: 142
+MLSMOTE synthetic rows requested by the original code: 757925
+Balancing classes...
+Augmented rows: 772233
+Training rows: 617786; test rows: 154447
+Training Random Forest...

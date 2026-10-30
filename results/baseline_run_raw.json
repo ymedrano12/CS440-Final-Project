@@ -1,0 +1,15 @@
+{
+  "outcome": "stopped: time limit reached",
+  "exit_code": 15,
+  "runtime_seconds": 3600.3,
+  "runtime_minutes": 60.0,
+  "peak_ram_gb": 23.14,
+  "total_ram_gb": 31.5,
+  "ram_cap_gb": 25.2,
+  "time_limit_minutes": 60,
+  "started": "2026-10-28T19:45:51",
+  "metrics_file_written": false,
+  "python": "3.11.18",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "command": "C:\\Users\\Catrina\\OneDrive\\Desktop\\CS440\\CS440-Final-Project\\.venv311\\Scripts\\python.exe -u C:\\Users\\Catrina\\OneDrive\\Desktop\\CS440\\CS440-Final-Project\\competition_baseline\\main.py C:\\Users\\Catrina\\OneDrive\\Desktop\\CS440\\skillscope_data\\skillscope_data.db --output C:\\Users\\Catrina\\OneDrive\\Desktop\\CS440\\CS440-Final-Project\\results\\baseline_metrics.json"
+}

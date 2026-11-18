@@ -1,3 +1,6 @@
+import time
+from contextlib import contextmanager
+
 import numpy as np
 from scipy import sparse
 from sklearn.metrics import precision_recall_fscore_support
@@ -25,3 +28,14 @@ def evaluate(y_true, y_pred) -> dict[str, float]:
         y_true, y_pred, average="micro", zero_division=0
     )
     return {"precision": float(precision), "recall": float(recall), "f1": float(f1)}
+
+
+def timer(label: str | None = None):
+    record = {"seconds": None}
+    start = time.perf_counter()
+    try:
+        yield record
+    finally:
+        record["seconds"] = round(time.perf_counter() - start, 3)
+        if label:
+            print(f"[{label}] {record['seconds']:.2f} s")

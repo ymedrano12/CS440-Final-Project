@@ -12,7 +12,8 @@ function_cache,table
 files_downloaded,table
 sqlite_stat1,table
 sqlite_stat4,table
-nlbse_tool_competition_data_by_issue,table
 vw_nlbse_tool_competition_data_by_file,view
 vw_nlbse_tool_competition_data_by_issue,view
-vw_classification_helper,view
+vw_classification_raw,view
+classification_raw,table
+nlbse_tool_competition_data_by_issue,table

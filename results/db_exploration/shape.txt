@@ -1,2 +1,2 @@
-rows: 7154
+rows: 3070
 columns: 226

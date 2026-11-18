@@ -11,7 +11,7 @@ ENV_VAR = "SKILLSCOPE_DB"
 COMPETITION_TABLE = "nlbse_tool_competition_data_by_issue"
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_DB = REPO_ROOT / "data" / "skillscope_data.db"
+DEFAULT_DB = REPO_ROOT / "data" / "skillscope_data_v2.db"
 
 def get_db_path(cli_path: str | None = None) -> Path:
     if cli_path:

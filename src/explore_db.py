@@ -34,5 +34,19 @@ print(f"Columns: {df.shape[1]} (9 metadata + 217 labels = should be 226)")
     f"rows: {df.shape[0]}\ncolumns: {df.shape[1]}\n", encoding="utf=8"
 )
 
+N_METADATA_COLUMNS = 9
+labels = df.columns[N_METADATA_COLUMNS:]
+split_names = [n for n in list(tables["name"]) + list(df.columns)
+               if "split" in n.lower() or "fold" in n.lower()]
+nulls = df[["issue text", "issue description"]].isna().sum()
+summary = (
+    f"labels: {len(labels)}\n"
+    f"split/fold tables or columns: {split_names or 'none'}\n"
+    f"null issue text: {nulls['issue text']}\n"
+    f"null issue description: {nulls['issue description']}\n"
+)
+print("\n" + summary)
+(OUT_DIR / "db_summary.txt").write_text(summary, encoding="utf-8")
+
 con.close()
 print(f"\nSaved outputs to: {OUT_DIR}")

@@ -61,7 +61,7 @@ def plot_label_frequencies(freq: pd.DataFrame, n_issues: int, path) -> None:
     ax.spines["bottom"].set_color(GRID)
 
     ax.axhline(RARE_CUTOFF, color=MUTED, linewidth=1, linestyle=(0, (4, 3)))
-    ax.text(len(shown) - 0.5, RARE_CUTOFF * 1.12, f"{RARE_CUTOFF} positives (T25 rare cut-off)",
+    ax.text(len(shown) - 0.5, RARE_CUTOFF * 1.12, f"{RARE_CUTOFF} positives",
             ha="right", va="bottom", fontsize=8, color=INK_SECONDARY)
 
     top = shown.iloc[0]

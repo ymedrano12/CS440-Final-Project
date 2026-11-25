@@ -1,83 +1,78 @@
-import numpy as np
 import time
+import numpy as np
 
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
+from sklearn.multiclass import OneVsRestClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import precision_recall_fscore_support
-
-from db_config import load_competition_table
-from preprocess import clean_text, build_tfidf
 from sklearn.utils.multiclass import type_of_target
 
 
-def train_sample():
+def create_model(model_name, random_state=42, **params):
 
-    df = load_competition_table()
-    df = df.sample(n=100, random_state=42).reset_index(drop=True)
+    if model_name == "random_forest":
 
-    descriptions = df["issue description"].apply(clean_text).to_numpy()
+        settings = {
+            "n_estimators": 10,
+            "random_state": random_state,
+            "n_jobs": 1
+        }
 
-    label_df = df.loc[:, "Application":]
+        settings.update(params)
 
-    labels = (label_df > 0).astype(int).to_numpy()
-   
+        return RandomForestClassifier(**settings)
 
-    print("Label shape:", labels.shape)
-    print("Label data type:", labels.dtype)
-    print("Represented skills:", (labels.sum(axis=0) > 0).sum())
-    print("Target type:", type_of_target(labels))
-    label_df = df.loc[:, "Application":]
+    elif model_name == "logistic_regression":
 
-    print(label_df.iloc[:5, :10])
+        settings = {
+            "max_iter": 1000,
+            "random_state": random_state,
+            "C": 1.0
+        }
 
-    print("Missing labels:", label_df.isna().sum().sum())
+        settings.update(params)
 
-    print("Unique values per column:")
-    print(label_df.nunique().value_counts())    
+        return OneVsRestClassifier(
+            LogisticRegression(**settings),
+            n_jobs=1
+        )
 
-    
-    train_idx, test_idx = train_test_split(
-        np.arange(len(df)),
-        test_size=0.2,
-        random_state=42
-    )
+    else:
+        raise ValueError(f"Unknown model: {model_name}")
 
-    
-    vectorizer, X_train, X_test = build_tfidf(
-        descriptions,
-        train_idx,
-        test_idx,
-        max_features=1000,
-        ngram_range=(1, 1)
-    )
 
-    y_train = labels[train_idx]
-    y_test = labels[test_idx]
+def train_model(model, X_train, y_train):
+
+    # Validate label format
+    if type_of_target(y_train) != "multilabel-indicator":
+        raise ValueError("Labels must be multi-hot encoded")
+
+    if X_train.shape[0] != y_train.shape[0]:
+        raise ValueError("Feature and label dimensions do not match")
 
     print("Training shape:", X_train.shape)
-    print("Testing shape:", X_test.shape)
-
-    
-    model = RandomForestClassifier(
-        n_estimators=10,
-        random_state=42,
-        n_jobs=1
-    )
-
-    
+    print("Label shape:", y_train.shape)
     print("Training model...")
 
     start_time = time.perf_counter()
 
     model.fit(X_train, y_train)
 
-    end_time = time.perf_counter()
+    training_time = time.perf_counter() - start_time
 
     print("Training complete!")
-    print(f"Training time: {end_time - start_time:.2f} seconds")
+    print(f"Training time: {training_time:.4f} seconds")
 
-    
+    return model, training_time
+
+
+def evaluate_model(model, X_test, y_test):
+
+    start_time = time.perf_counter()
+
     y_pred = model.predict(X_test)
+
+    prediction_time = time.perf_counter() - start_time
 
     precision, recall, f1, _ = precision_recall_fscore_support(
         y_test,
@@ -86,10 +81,16 @@ def train_sample():
         zero_division=0
     )
 
+    results = {
+        "precision": float(precision),
+        "recall": float(recall),
+        "f1": float(f1),
+        "prediction_time": prediction_time
+    }
+
+    print("Prediction shape:", y_pred.shape)
     print("Precision:", precision)
     print("Recall:", recall)
     print("F1 Score:", f1)
 
-
-if __name__ == "__main__":
-    train_sample()
+    return results

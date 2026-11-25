@@ -1,0 +1,2 @@
+model,sample_size,training_samples,testing_samples,max_features,actual_features,ngram_range,random_state,training_time,precision,recall,f1
+logistic_regression,100,80,20,1000,1000,"(1, 1)",42,0.13709604099858552,0.8767123287671232,0.2,0.3256997455470738

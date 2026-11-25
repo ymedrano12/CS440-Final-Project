@@ -1,0 +1,218 @@
+label,positives,share_of_issues
+Language,2578,0.8397
+Data Structure,2520,0.8208
+Software Development and IT Operations,2311,0.7528
+Error Handling,1835,0.5977
+Language-Standard Libraries,1681,0.5476
+Logic,1233,0.4016
+Computer Graphics,1232,0.4013
+Software Development and IT Operations-Automated Testing,1147,0.3736
+Data Structure-Data Manipulation,1131,0.3684
+Parser,1111,0.3619
+Machine Learning,938,0.3055
+Software Development and IT Operations-Monitoring and Logging,931,0.3033
+Multi-Thread,865,0.2818
+Utility,753,0.2453
+Logging,745,0.2427
+Input-Output,724,0.2358
+Computer Graphics-Graphics Optimization,715,0.2329
+User Interface,705,0.2296
+Data Structure-Data Sorting,697,0.227
+Software Development and IT Operations-Configuration Management,695,0.2264
+Data Structure-Search Algorithms,694,0.2261
+Multi-Thread-Concurrency Control,661,0.2153
+Logging-Error Logs,650,0.2117
+Data Structure-Tree Structures,643,0.2094
+Databases,628,0.2046
+Data Structure-Linear Structures,594,0.1935
+User Interface-Interaction Design,576,0.1876
+Computer Graphics-Modeling,513,0.1671
+Computer Graphics-Image Rendering,461,0.1502
+Event Handling,460,0.1498
+User Interface-Layout Design,431,0.1404
+Machine Learning-Prediction,405,0.1319
+Parser-Validation,388,0.1264
+User Interface-User Feedback,384,0.1251
+Interpreter,380,0.1238
+Software Development and IT Operations-Version Control,377,0.1228
+Parser-Syntax Parsing,370,0.1205
+Multimedia,361,0.1176
+Input-Output-Data Reading,359,0.1169
+Machine Learning-Training Models,351,0.1143
+Computer Graphics-Texture Mapping,349,0.1137
+Machine Learning-Data Preprocessing,344,0.1121
+Test,336,0.1094
+Input-Output-Stream Management,326,0.1062
+Multi-Thread-Thread Safety,324,0.1055
+Language-Runtime Optimization,311,0.1013
+Parser-Data Conversion,309,0.1007
+Machine Learning-Feature Extraction,293,0.0954
+Logic-Rule Processing,291,0.0948
+Databases-Query Execution,287,0.0935
+Logic-Validation Checks,272,0.0886
+Network,265,0.0863
+Machine Learning-Model Evaluation,236,0.0769
+Parser-Error Recovery,233,0.0759
+User Interface-Accessibility,226,0.0736
+Utility-Data Conversion,198,0.0645
+Test-Unit Testing,198,0.0645
+Databases-Database Security,195,0.0635
+Input-Output-Data Writing,191,0.0622
+Event Handling-Event Driven Processing,189,0.0616
+Language-Syntax Features,186,0.0606
+Databases-Transaction Management,182,0.0593
+Language-Type Systems,180,0.0586
+Logging-Event Logging,172,0.056
+Databases-Database Optimization,170,0.0554
+Databases-Schema Design,162,0.0528
+Logic-Logic Optimization,139,0.0453
+Network-Data Transmission,137,0.0446
+Multimedia-Content Delivery,132,0.043
+Language-Language Extensions,131,0.0427
+Search,121,0.0394
+Security,116,0.0378
+Event Handling-User Interactions,114,0.0371
+Network-Connection Management,114,0.0371
+Utility-Diagnostic Utilities,112,0.0365
+Logic-Decision Making,107,0.0349
+Data Structure-Graph Structures,106,0.0345
+Language-Compiler/Interpreter Enhancements,101,0.0329
+Logic-Control Structures,99,0.0322
+Computer Graphics-Animation,91,0.0296
+Utility-System Tools,90,0.0293
+Databases-Backup and Recovery,90,0.0293
+Input-Output-Buffering Strategies,88,0.0287
+Logic-Algorithm Implementation,86,0.028
+User Interface-Animation,86,0.028
+Multimedia-Encoding and Decoding,83,0.027
+Machine Learning-Deployment,81,0.0264
+Multimedia-Streaming,80,0.0261
+Error Handling-Exception Handling,78,0.0254
+Natural Language Processing,74,0.0241
+Utility-Automation Scripts,74,0.0241
+Logging-Audit Trails,72,0.0235
+Interpreter-Debugging,70,0.0228
+Big Data,67,0.0218
+Natural Language Processing-Text Analysis,59,0.0192
+Microservices/Services,58,0.0189
+Big Data-Data Processing,55,0.0179
+Interpreter-Script Execution,51,0.0166
+Application Performance Manager,46,0.015
+Error Handling-Error Logging,45,0.0147
+Network-Protocol Implementation,44,0.0143
+Interpreter-Syntax Analysis,42,0.0137
+Logging-System Monitoring,41,0.0134
+Interpreter-Code Translation,39,0.0127
+Logging-User Activity Logs,39,0.0127
+Multimedia-Media Playback,38,0.0124
+Utility-Performance Tools,32,0.0104
+Cloud,30,0.0098
+Security-Encryption,29,0.0094
+Search-Query Processing,26,0.0085
+Computer Graphics-Visual Effects,25,0.0081
+Interpreter-Optimization,23,0.0075
+Security-Data Integrity,23,0.0075
+Input-Output-File Management,23,0.0075
+Error Handling-Debugging Tools,22,0.0072
+Multimedia-Media Storage,21,0.0068
+Security-Authentication,19,0.0062
+Cloud-Resource Management,18,0.0059
+Application Performance Manager-Diagnostic Tools,18,0.0059
+Big Data-Real-Time Processing,17,0.0055
+Network-Network Security,16,0.0052
+Interpreter-Memory Management,14,0.0046
+Network-Network Monitoring,11,0.0036
+Security-Authorization,11,0.0036
+User Interface-Responsive Design,10,0.0033
+Parser-Code Generation,10,0.0033
+Cloud-Service Configuration,10,0.0033
+Software Development and IT Operations-Continuous Integration,9,0.0029
+Logging-Performance Tracking,7,0.0023
+Big Data-Data Storage,5,0.0016
+Search-Indexing,4,0.0013
+Cloud-Data Migration,4,0.0013
+Error Handling-Fault Tolerance,4,0.0013
+Event Handling-Notifications,3,0.001
+Setup,3,0.001
+Setup-Environment Setup,2,0.0007
+Parser-Optimization,2,0.0007
+Setup-Configuration,2,0.0007
+Multi-Thread-Resource Sharing,2,0.0007
+Multi-Thread-Parallel Processing,1,0.0003
+Security-Compliance,1,0.0003
+Event Handling-Event Logging,1,0.0003
+Application-Plugin Management,0,0.0
+Application-Integration,0,0.0
+Application-User Customization,0,0.0
+Application Performance Manager-Resource Allocation,0,0.0
+Application Performance Manager-Error Detection,0,0.0
+Application Performance Manager-Load Balancing,0,0.0
+Big Data-Data Analysis,0,0.0
+Big Data-Data Visualization,0,0.0
+Big Data-Batch Processing,0,0.0
+Cloud-Scalability Solutions,0,0.0
+Application Performance Manager-Traffic Management,0,0.0
+Input-Output-Network IO,0,0.0
+Geographic Information System-Location Services,0,0.0
+Geographic Information System-Geographic Visualization,0,0.0
+Geographic Information System-Data Collection,0,0.0
+Geographic Information System-Environmental Modeling,0,0.0
+Geographic Information System,0,0.0
+Geographic Information System-Mapping,0,0.0
+Geographic Information System-Spatial Analysis,0,0.0
+Event Handling-Asynchronous Processing,0,0.0
+Error Handling-Error Prevention,0,0.0
+Error Handling-User Notification,0,0.0
+Event Handling-System Events,0,0.0
+Cloud-Cloud Security,0,0.0
+Software Development and IT Operations-Continuous Deployment,0,0.0
+Cloud-Virtualization,0,0.0
+Application,0,0.0
+Application Performance Manager-Performance Monitoring,0,0.0
+Application-Compatibility Checks,0,0.0
+Application-Version Control,0,0.0
+Application-App Configuration,0,0.0
+Internationalization-Language Support,0,0.0
+Internationalization-Right-to-Left Layouts,0,0.0
+Internationalization,0,0.0
+Internationalization-Cultural Adaptation,0,0.0
+Microservices/Services-Service Deployment,0,0.0
+Microservices/Services-Service Discovery,0,0.0
+Microservices/Services-Load Balancing,0,0.0
+Microservices/Services-API Gateway,0,0.0
+Microservices/Services-Fault Tolerance,0,0.0
+Internationalization-Date/Time Formatting,0,0.0
+Internationalization-Currency Conversion,0,0.0
+Internationalization-Localization,0,0.0
+Natural Language Processing-Machine Translation,0,0.0
+Natural Language Processing-Sentiment Analysis,0,0.0
+Natural Language Processing-Language Generation,0,0.0
+Natural Language Processing-Speech Recognition,0,0.0
+Multi-Thread-Deadlock Resolution,0,0.0
+Multi-Thread-Synchronization,0,0.0
+Microservices/Services-Service Communication,0,0.0
+Multimedia-Media Editing,0,0.0
+Network-Bandwidth Optimization,0,0.0
+Operating System,0,0.0
+Operating System-Memory Management,0,0.0
+Operating System-Process Management,0,0.0
+Operating System-System Security,0,0.0
+Operating System-File Systems,0,0.0
+Operating System-User Interface,0,0.0
+Natural Language Processing-Chatbot Interfaces,0,0.0
+Search-Personalization,0,0.0
+Search-Ranking,0,0.0
+Search-Optimization,0,0.0
+Search-Caching,0,0.0
+Operating System-Device Drivers,0,0.0
+Security-Intrusion Detection,0,0.0
+Setup-Installation,0,0.0
+Setup-System Requirements,0,0.0
+Setup-Licensing,0,0.0
+Setup-Update Management,0,0.0
+Utility-Backup Tools,0,0.0
+Test-Integration Testing,0,0.0
+Test-Performance Testing,0,0.0
+Test-Security Testing,0,0.0
+Test-Usability Testing,0,0.0
+Test-Regression Testing,0,0.0

@@ -1,0 +1,10 @@
+{
+  "cutoff": 10,
+  "issues": 3070,
+  "labels": 217,
+  "rare_labels": 90,
+  "rare_share_of_labels": 0.4147,
+  "labels_with_0_positives": 75,
+  "labels_with_1_to_9_positives": 15,
+  "rare_share_of_all_positives": 0.0011
+}

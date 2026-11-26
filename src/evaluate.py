@@ -29,6 +29,32 @@ def evaluate(y_true, y_pred) -> dict[str, float]:
     )
     return {"precision": float(precision), "recall": float(recall), "f1": float(f1)}
 
+
+def evaluate_by_frequency(y_true, y_pred, train_positives,
+                          rare_cutoff: int = 10, common_cutoff: int = 100) -> dict:
+    y_true = _as_binary_matrix(y_true, "y_true")
+    y_pred = _as_binary_matrix(y_pred, "y_pred")
+    counts = np.asarray(train_positives).ravel()
+    groups = {
+        "unseen": counts == 0,
+        "rare": (counts > 0) & (counts < rare_cutoff),
+        "medium": (counts >= rare_cutoff) & (counts < common_cutoff),
+        "common": counts >= common_cutoff,
+    }
+    report = {}
+    for name, cols in groups.items():
+        if not cols.any():
+            continue
+        scores = evaluate(y_true[:, cols], y_pred[:, cols])
+        report[name] = {
+            "labels": int(cols.sum()),
+            "labels_predicted": int((y_pred[:, cols].sum(axis=0) > 0).sum()),
+            "support": int(y_true[:, cols].sum()),
+            **{k: round(v, 4) for k, v in scores.items()},
+        }
+    return report
+
+
 @contextmanager
 def timer(label: str | None = None):
     record = {"seconds": None}

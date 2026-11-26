@@ -1,0 +1,127 @@
+{
+  "created": "2026-11-26T00:42:55",
+  "seed": 42,
+  "threshold": 0.5,
+  "rows": {
+    "fit": 2146,
+    "validation": 308,
+    "test_held_out": 616
+  },
+  "tfidf_features": 1000,
+  "model": {
+    "hidden_sizes": [
+      512
+    ],
+    "dropout": 0.5
+  },
+  "one_hot_check": {
+    "shape": [
+      308,
+      217
+    ],
+    "values": [
+      0,
+      1
+    ],
+    "mean_labels_per_issue": 20.312,
+    "issues_with_no_label": 0,
+    "labels_never_predicted": 121
+  },
+  "true_labels_per_issue": 13.37,
+  "validation_metrics": {
+    "precision": 0.42135549872122763,
+    "recall": 0.6401165614375911,
+    "f1": 0.5081935608251398
+  },
+  "validation_by_label_frequency": {
+    "unseen": {
+      "labels": 75,
+      "labels_predicted": 0,
+      "support": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "rare": {
+      "labels": 21,
+      "labels_predicted": 0,
+      "support": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "medium": {
+      "labels": 54,
+      "labels_predicted": 29,
+      "support": 277,
+      "precision": 0.1587,
+      "recall": 0.1083,
+      "f1": 0.1288
+    },
+    "common": {
+      "labels": 67,
+      "labels_predicted": 67,
+      "support": 3833,
+      "precision": 0.4295,
+      "recall": 0.6799,
+      "f1": 0.5265
+    }
+  },
+  "weighted": true,
+  "pos_weight_cap": 10.0,
+  "predict_seconds": 0.003,
+  "train_settings": {
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "batch_size": 64,
+    "max_epochs": 50,
+    "patience": 5
+  },
+  "device": "cpu",
+  "epochs_run": 19,
+  "best_epoch": 14,
+  "stopped_early": true,
+  "train_seconds": 2.901,
+  "train_loss": [
+    0.738935,
+    0.501182,
+    0.469834,
+    0.453491,
+    0.434778,
+    0.411791,
+    0.391028,
+    0.37449,
+    0.357238,
+    0.343026,
+    0.330202,
+    0.31749,
+    0.307676,
+    0.298848,
+    0.290521,
+    0.283065,
+    0.27565,
+    0.268294,
+    0.262196
+  ],
+  "val_loss": [
+    0.527936,
+    0.448084,
+    0.437429,
+    0.428371,
+    0.416107,
+    0.405314,
+    0.398218,
+    0.39208,
+    0.388424,
+    0.384752,
+    0.382499,
+    0.380732,
+    0.38105,
+    0.380657,
+    0.380777,
+    0.384906,
+    0.386606,
+    0.389764,
+    0.393869
+  ]
+}

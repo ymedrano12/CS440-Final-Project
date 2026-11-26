@@ -1,3 +1,6 @@
 model,precision,recall,f1,evaluated_on,threshold,source
 SkillScope RF + TF-IDF (paper),0.908,0.876,0.889,paper's 80/20 split of the MLSMOTE-augmented data,,"Carter et al., SkillScope, NLBSE 2025"
 MLP (first run),0.6967,0.3866,0.4973,"validation, 308 issues (leak-free split, seed 42)",0.5,results/mlp/first_run_seed42.json
+Logistic regression (one-vs-rest),0.7277,0.3361,0.4598,"validation, 308 issues (leak-free split, seed 42)",0.5,results/linear/logreg_seed42.json
+Linear SVM (one-vs-rest),0.7926,0.2144,0.3375,"validation, 308 issues (leak-free split, seed 42)",0 (SVM decision value),results/linear/svm_seed42.json
+MLP (weighted),0.4214,0.6401,0.5082,"validation, 308 issues (leak-free split, seed 42)",0.5,results/mlp/weighted_run_seed42.json

@@ -1,5 +1,5 @@
 {
-  "created": "2026-11-25T23:36:57",
+  "created": "2026-11-26T00:42:16",
   "seed": 42,
   "threshold": 0.5,
   "rows": {
@@ -33,7 +33,43 @@
     "recall": 0.38659543467702767,
     "f1": 0.49726690613774793
   },
-  "predict_seconds": 0.005,
+  "validation_by_label_frequency": {
+    "unseen": {
+      "labels": 75,
+      "labels_predicted": 0,
+      "support": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "rare": {
+      "labels": 21,
+      "labels_predicted": 0,
+      "support": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "medium": {
+      "labels": 54,
+      "labels_predicted": 1,
+      "support": 277,
+      "precision": 1.0,
+      "recall": 0.0036,
+      "f1": 0.0072
+    },
+    "common": {
+      "labels": 67,
+      "labels_predicted": 55,
+      "support": 3833,
+      "precision": 0.6966,
+      "recall": 0.4151,
+      "f1": 0.5202
+    }
+  },
+  "weighted": false,
+  "pos_weight_cap": null,
+  "predict_seconds": 0.003,
   "train_settings": {
     "lr": 0.001,
     "weight_decay": 0.0,
@@ -45,7 +81,7 @@
   "epochs_run": 24,
   "best_epoch": 19,
   "stopped_early": true,
-  "train_seconds": 3.588,
+  "train_seconds": 3.916,
   "train_loss": [
     0.530794,
     0.197201,

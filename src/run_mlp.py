@@ -6,10 +6,11 @@ import numpy as np
 import pandas as pd
 
 from db_config import REPO_ROOT, load_competition_table
-from evaluate import evaluate, timer
+from evaluate import evaluate, evaluate_by_frequency, timer
 from make_split import (N_METADATA_COLUMNS, TEXT_COLUMNS, load_split,
                         split_validation)
-from mlp import build_mlp
+from mlp import (DEFAULT_POS_WEIGHT_CAP, build_loss, build_mlp,
+                 compute_pos_weight)
 from preprocess import build_tfidf, clean_text
 from train_mlp import predict_proba, train_mlp
 
@@ -48,6 +49,10 @@ def main():
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--threshold", type=float, default=0.5,
                     help="probability cut-off for a label (tuned on validation later)")
+    ap.add_argument("--weighted", action="store_true",
+                    help="weight each label's positives by negatives/positives (training rows only)")
+    ap.add_argument("--pos-weight-cap", type=float, default=DEFAULT_POS_WEIGHT_CAP,
+                    help="largest per-label weight used with --weighted")
     args = ap.parse_args()
 
     df = load_competition_table(args.db)
@@ -63,7 +68,13 @@ def main():
     print(f"TF-IDF features: {X_fit.shape[1]} | labels: {y.shape[1]}")
 
     model = build_mlp(input_dim=X_fit.shape[1], n_labels=y.shape[1], seed=args.seed)
-    history = train_mlp(model, X_fit, y_fit, X_val, y_val, seed=args.seed)
+    train_positives = y_fit.to_numpy().sum(axis=0)
+    pos_weight = compute_pos_weight(y_fit, args.pos_weight_cap) if args.weighted else None
+    if pos_weight is not None:
+        print(f"pos_weight: min {pos_weight.min():.2f} | median {np.median(pos_weight):.2f} "
+              f"| max {pos_weight.max():.2f} | at cap: {(pos_weight >= args.pos_weight_cap).sum()}")
+    history = train_mlp(model, X_fit, y_fit, X_val, y_val,
+                        loss_fn=build_loss(pos_weight), seed=args.seed)
 
     with timer() as t_pred:
         probs = predict_proba(model, X_val)
@@ -71,6 +82,7 @@ def main():
 
     shape_report = check_one_hot(y_pred, len(val_idx), y.shape[1])
     metrics = evaluate(y_val, y_pred)
+    by_frequency = evaluate_by_frequency(y_val, y_pred, train_positives)
     true_per_issue = float(y_val.to_numpy().sum(axis=1).mean())
 
     print("\nOne-hot check passed:", json.dumps(shape_report))
@@ -79,6 +91,8 @@ def main():
           f"{args.threshold}: {json.dumps({k: round(v, 4) for k, v in metrics.items()})}")
     print("Example row (indices of predicted labels):",
           np.flatnonzero(y_pred[0]).tolist())
+    print("\nBy label frequency in the training rows:")
+    print(pd.DataFrame(by_frequency).T.to_string())
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     out = {
@@ -92,10 +106,14 @@ def main():
         "one_hot_check": shape_report,
         "true_labels_per_issue": round(true_per_issue, 3),
         "validation_metrics": metrics,
+        "validation_by_label_frequency": by_frequency,
+        "weighted": args.weighted,
+        "pos_weight_cap": args.pos_weight_cap if args.weighted else None,
         "predict_seconds": t_pred["seconds"],
         **history,
     }
-    path = RESULTS_DIR / f"first_run_seed{args.seed}.json"
+    run_name = "weighted_run" if args.weighted else "first_run"
+    path = RESULTS_DIR / f"{run_name}_seed{args.seed}.json"
     path.write_text(json.dumps(out, indent=2), encoding="utf-8")
     print(f"Saved to: {path}")
 

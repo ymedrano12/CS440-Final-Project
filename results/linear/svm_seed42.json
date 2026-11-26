@@ -1,0 +1,34 @@
+{
+  "created": "2026-11-26T00:26:07",
+  "seed": 42,
+  "rows": {
+    "fit": 2146,
+    "validation": 308,
+    "test_held_out": 616
+  },
+  "tfidf_features": 1000,
+  "true_labels_per_issue": 13.37,
+  "model": "Linear SVM (one-vs-rest)",
+  "C": 1.0,
+  "threshold": "0 (SVM decision value)",
+  "one_hot_check": {
+    "shape": [
+      308,
+      217
+    ],
+    "values": [
+      0,
+      1
+    ],
+    "mean_labels_per_issue": 3.617,
+    "issues_with_no_label": 27,
+    "labels_never_predicted": 166
+  },
+  "validation_metrics": {
+    "precision": 0.7926391382405745,
+    "recall": 0.21442447790189412,
+    "f1": 0.3375382262996942
+  },
+  "train_seconds": 0.258,
+  "predict_seconds": 0.013
+}

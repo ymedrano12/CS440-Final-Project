@@ -1,0 +1,91 @@
+label,positives,share_of_issues
+Software Development and IT Operations-Continuous Integration,9,0.0029
+Logging-Performance Tracking,7,0.0023
+Big Data-Data Storage,5,0.0016
+Search-Indexing,4,0.0013
+Cloud-Data Migration,4,0.0013
+Error Handling-Fault Tolerance,4,0.0013
+Event Handling-Notifications,3,0.001
+Setup,3,0.001
+Setup-Environment Setup,2,0.0007
+Parser-Optimization,2,0.0007
+Setup-Configuration,2,0.0007
+Multi-Thread-Resource Sharing,2,0.0007
+Multi-Thread-Parallel Processing,1,0.0003
+Security-Compliance,1,0.0003
+Event Handling-Event Logging,1,0.0003
+Application-Plugin Management,0,0.0
+Application-Integration,0,0.0
+Application-User Customization,0,0.0
+Application Performance Manager-Resource Allocation,0,0.0
+Application Performance Manager-Error Detection,0,0.0
+Application Performance Manager-Load Balancing,0,0.0
+Big Data-Data Analysis,0,0.0
+Big Data-Data Visualization,0,0.0
+Big Data-Batch Processing,0,0.0
+Cloud-Scalability Solutions,0,0.0
+Application Performance Manager-Traffic Management,0,0.0
+Input-Output-Network IO,0,0.0
+Geographic Information System-Location Services,0,0.0
+Geographic Information System-Geographic Visualization,0,0.0
+Geographic Information System-Data Collection,0,0.0
+Geographic Information System-Environmental Modeling,0,0.0
+Geographic Information System,0,0.0
+Geographic Information System-Mapping,0,0.0
+Geographic Information System-Spatial Analysis,0,0.0
+Event Handling-Asynchronous Processing,0,0.0
+Error Handling-Error Prevention,0,0.0
+Error Handling-User Notification,0,0.0
+Event Handling-System Events,0,0.0
+Cloud-Cloud Security,0,0.0
+Software Development and IT Operations-Continuous Deployment,0,0.0
+Cloud-Virtualization,0,0.0
+Application,0,0.0
+Application Performance Manager-Performance Monitoring,0,0.0
+Application-Compatibility Checks,0,0.0
+Application-Version Control,0,0.0
+Application-App Configuration,0,0.0
+Internationalization-Language Support,0,0.0
+Internationalization-Right-to-Left Layouts,0,0.0
+Internationalization,0,0.0
+Internationalization-Cultural Adaptation,0,0.0
+Microservices/Services-Service Deployment,0,0.0
+Microservices/Services-Service Discovery,0,0.0
+Microservices/Services-Load Balancing,0,0.0
+Microservices/Services-API Gateway,0,0.0
+Microservices/Services-Fault Tolerance,0,0.0
+Internationalization-Date/Time Formatting,0,0.0
+Internationalization-Currency Conversion,0,0.0
+Internationalization-Localization,0,0.0
+Natural Language Processing-Machine Translation,0,0.0
+Natural Language Processing-Sentiment Analysis,0,0.0
+Natural Language Processing-Language Generation,0,0.0
+Natural Language Processing-Speech Recognition,0,0.0
+Multi-Thread-Deadlock Resolution,0,0.0
+Multi-Thread-Synchronization,0,0.0
+Microservices/Services-Service Communication,0,0.0
+Multimedia-Media Editing,0,0.0
+Network-Bandwidth Optimization,0,0.0
+Operating System,0,0.0
+Operating System-Memory Management,0,0.0
+Operating System-Process Management,0,0.0
+Operating System-System Security,0,0.0
+Operating System-File Systems,0,0.0
+Operating System-User Interface,0,0.0
+Natural Language Processing-Chatbot Interfaces,0,0.0
+Search-Personalization,0,0.0
+Search-Ranking,0,0.0
+Search-Optimization,0,0.0
+Search-Caching,0,0.0
+Operating System-Device Drivers,0,0.0
+Security-Intrusion Detection,0,0.0
+Setup-Installation,0,0.0
+Setup-System Requirements,0,0.0
+Setup-Licensing,0,0.0
+Setup-Update Management,0,0.0
+Utility-Backup Tools,0,0.0
+Test-Integration Testing,0,0.0
+Test-Performance Testing,0,0.0
+Test-Security Testing,0,0.0
+Test-Usability Testing,0,0.0
+Test-Regression Testing,0,0.0

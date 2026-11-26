@@ -10,6 +10,7 @@ import pandas as pd
 ENV_VAR = "SKILLSCOPE_DB"
 COMPETITION_TABLE = "nlbse_tool_competition_data_by_issue"
 
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_DB = REPO_ROOT / "data" / "skillscope_data_v2.db"
 

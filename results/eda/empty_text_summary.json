@@ -1,0 +1,24 @@
+{
+  "issues": 3070,
+  "fields": {
+    "title": {
+      "missing": 0,
+      "blank": 0,
+      "empty": 0,
+      "empty_rate": 0.0
+    },
+    "description": {
+      "missing": 0,
+      "blank": 663,
+      "empty": 663,
+      "empty_rate": 0.216
+    },
+    "combined": {
+      "missing": 0,
+      "blank": 0,
+      "empty": 0,
+      "empty_rate": 0.0
+    }
+  },
+  "issues_with_title_only": 663
+}

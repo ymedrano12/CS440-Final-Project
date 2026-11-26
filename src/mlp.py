@@ -1,3 +1,4 @@
+import numpy as np
 import torch
 from torch import nn
 
@@ -48,3 +49,18 @@ def build_loss(pos_weight=None) -> nn.BCEWithLogitsLoss:
     if pos_weight is not None:
         pos_weight = torch.as_tensor(pos_weight, dtype=torch.float32)
     return nn.BCEWithLogitsLoss(pos_weight=pos_weight)
+
+
+# Rare labels have hundreds of negatives per positive; uncapped weights that
+# large make the model predict them everywhere, so the weight is capped.
+DEFAULT_POS_WEIGHT_CAP = 10.0
+
+
+def compute_pos_weight(y_train, max_weight: float | None = DEFAULT_POS_WEIGHT_CAP) -> np.ndarray:
+    y = np.asarray(y_train, dtype=np.float64)
+    positives = y.sum(axis=0)
+    negatives = y.shape[0] - positives
+    weight = np.divide(negatives, positives, out=np.ones_like(positives),
+                       where=positives > 0)
+    upper = np.inf if max_weight is None else max_weight
+    return np.clip(weight, 1.0, upper).astype(np.float32)

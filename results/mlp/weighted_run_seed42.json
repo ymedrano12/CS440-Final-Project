@@ -1,5 +1,5 @@
 {
-  "created": "2026-11-26T00:42:55",
+  "created": "2026-11-26T01:50:56",
   "seed": 42,
   "threshold": 0.5,
   "rows": {
@@ -81,7 +81,7 @@
   "epochs_run": 19,
   "best_epoch": 14,
   "stopped_early": true,
-  "train_seconds": 2.901,
+  "train_seconds": 2.776,
   "train_loss": [
     0.738935,
     0.501182,

@@ -115,6 +115,8 @@ def main():
     run_name = "weighted_run" if args.weighted else "first_run"
     path = RESULTS_DIR / f"{run_name}_seed{args.seed}.json"
     path.write_text(json.dumps(out, indent=2), encoding="utf-8")
+    np.savez_compressed(path.with_name(f"{path.stem}_val_probs.npz"),
+                        probs=probs, y_val=y_val.to_numpy(), val_idx=val_idx)
     print(f"Saved to: {path}")
 
 

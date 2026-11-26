@@ -43,6 +43,22 @@ def check_one_hot(y_pred: np.ndarray, n_rows: int, n_labels: int) -> dict:
     }
 
 
+def load_fit_val(db=None, seed: int = 42) -> dict:
+    df = load_competition_table(db)
+    texts, y = issue_texts(df), label_matrix(df)
+
+    train_idx, test_idx = load_split(df, seed)
+    fit_idx, val_idx = split_validation(df, train_idx, seed=seed)
+    print(f"Rows: fit {len(fit_idx)} | validation {len(val_idx)} | "
+          f"test {len(test_idx)} (held out)")
+
+    _, X_fit, X_val = build_tfidf(texts, fit_idx, val_idx)
+    print(f"TF-IDF features: {X_fit.shape[1]} | labels: {y.shape[1]}")
+    return {"fit_idx": fit_idx, "val_idx": val_idx, "test_idx": test_idx,
+            "X_fit": X_fit, "X_val": X_val, "y": y,
+            "y_fit": y.iloc[fit_idx], "y_val": y.iloc[val_idx]}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--db", help="optional path to the database")
@@ -55,17 +71,9 @@ def main():
                     help="largest per-label weight used with --weighted")
     args = ap.parse_args()
 
-    df = load_competition_table(args.db)
-    texts, y = issue_texts(df), label_matrix(df)
-
-    train_idx, _test_idx = load_split(df, args.seed)  # test stays unused until T63
-    fit_idx, val_idx = split_validation(df, train_idx, seed=args.seed)
-    print(f"Rows: fit {len(fit_idx)} | validation {len(val_idx)} | "
-          f"test {len(_test_idx)} (held out)")
-
-    _, X_fit, X_val = build_tfidf(texts, fit_idx, val_idx)
-    y_fit, y_val = y.iloc[fit_idx], y.iloc[val_idx]
-    print(f"TF-IDF features: {X_fit.shape[1]} | labels: {y.shape[1]}")
+    data = load_fit_val(args.db, args.seed)
+    fit_idx, val_idx, _test_idx = data["fit_idx"], data["val_idx"], data["test_idx"]
+    X_fit, X_val, y_fit, y_val, y = (data[k] for k in ("X_fit", "X_val", "y_fit", "y_val", "y"))
 
     model = build_mlp(input_dim=X_fit.shape[1], n_labels=y.shape[1], seed=args.seed)
     train_positives = y_fit.to_numpy().sum(axis=0)

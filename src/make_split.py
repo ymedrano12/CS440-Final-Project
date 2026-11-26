@@ -71,6 +71,13 @@ def load_split(df: pd.DataFrame, seed: int = 42) -> tuple[np.ndarray, np.ndarray
     rows = saved["row_index"].to_numpy()
     return rows[~is_test], rows[is_test]
 
+def split_validation(df: pd.DataFrame, train_idx, val_size: float = 0.125,
+                     seed: int = 42) -> tuple[np.ndarray, np.ndarray]:
+    train_idx = np.asarray(train_idx)
+    groups = duplicate_groups(df.iloc[train_idx])
+    splitter = GroupShuffleSplit(n_splits=1, test_size=val_size, random_state=seed)
+    fit_pos, val_pos = next(splitter.split(train_idx, groups=groups))
+    return train_idx[fit_pos], train_idx[val_pos]
 
 def main():
     ap = argparse.ArgumentParser()

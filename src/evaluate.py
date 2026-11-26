@@ -29,7 +29,7 @@ def evaluate(y_true, y_pred) -> dict[str, float]:
     )
     return {"precision": float(precision), "recall": float(recall), "f1": float(f1)}
 
-
+@contextmanager
 def timer(label: str | None = None):
     record = {"seconds": None}
     start = time.perf_counter()

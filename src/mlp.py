@@ -11,7 +11,7 @@ class SkillMLP(nn.Module):
         super().__init__()
         hidden_sizes = tuple(hidden_sizes)
         if not 1 <= len(hidden_sizes) <= 2:
-            raise ValueError(f"T44 uses 1-2 hidden layers, got {len(hidden_sizes)}")
+            raise ValueError(f"SkillMLP uses 1-2 hidden layers, got {len(hidden_sizes)}")
         if not 0 <= dropout < 1:
             raise ValueError(f"dropout must be in [0, 1), got {dropout}")
 

@@ -1,31 +1,19 @@
 from __future__ import annotations
-import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer
-from db_config import load_competition_table
 
-import argparse
-import json
-import random
 import re
-import sqlite3
 import string
-from pathlib import Path
 
 import emoji
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics import precision_recall_fscore_support
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import NearestNeighbors
-from sklearn.preprocessing import MultiLabelBinarizer
 
-# T40 and T41 will completed in this file!
-# Baseline settings (competition_baseline/main.py: TfidfVectorizer(max_features=1000)).
-# T42 decides our final values; pass them as keyword arguments to build_tfidf().
-# TFIDF max_meatures: [1000, 5000, 10000], unigrams: (1, 1) , bigrams: (2, 2) both: (1, 2)
-DEFAULT_TFIDF_SETTINGS = {"max_features": 1000, "ngram_range": (1, 2)}
+from db_config import load_competition_table
+
+# TF-IDF settings (T42): same as the baseline.
+# Larger vocabularies (5000, 10000) and bigrams (1, 2) are left for the
+# hyperparameter search; pass them as keyword arguments to build_tfidf().
+DEFAULT_TFIDF_SETTINGS = {"max_features": 1000, "ngram_range": (1, 1)}
 
 
 def build_tfidf(texts, train_idx, *other_idx, **settings):
@@ -46,14 +34,7 @@ def build_tfidf(texts, train_idx, *other_idx, **settings):
     return (vectorizer, X_train, *X_others)
 
 def clean_text(text):
-    """Copy of ``src.classifier.clean_text`` used during RF training."""
-    #combine title w/ description?
-    text = hanle_null_text(text)
-    cleaned_count = 0
-    original_count = 0
-    if not isinstance(text, str):
-        original_count += 1
-        return text
+    text = handle_null_text(text)
 
     text = text.replace('"', "")
     text = re.sub(r"DevTools.*?\(automated\)", "", text)
@@ -68,10 +49,9 @@ def clean_text(text):
     words = [word for word in words if len(word) <= 20] #check diff restrictions?
     cleaned_text = " ".join(words)
 
-    cleaned_count += 1
     return cleaned_text
 
-def hanle_null_text(text):
+def handle_null_text(text):
     if pd.isna(text):
         return ""
     if not isinstance(text, str):
@@ -79,7 +59,6 @@ def hanle_null_text(text):
 
     return text
 
-#-------apply to df?-------
 def test_clean_text():
     df = load_competition_table()
 

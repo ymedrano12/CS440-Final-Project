@@ -36,15 +36,20 @@ def config_key(config: dict) -> str:
                        for k, v in config.items()}, sort_keys=True)
 
 
-def run_config(config: dict, data: dict, seed: int) -> dict:
+def train_config(config: dict, data: dict, seed: int, verbose: bool = False):
     model = build_mlp(input_dim=data["X_fit"].shape[1], n_labels=data["y"].shape[1],
-                      seed=seed, **{k: config[k] for k in MODEL_KEYS})
+                      seed=seed, **{k: tuple(config[k]) if k == "hidden_sizes" else config[k]
+                                    for k in MODEL_KEYS})
     cap = config["pos_weight_cap"]
     pos_weight = None if cap is None else compute_pos_weight(data["y_fit"], cap)
     history = train_mlp(model, data["X_fit"], data["y_fit"], data["X_val"], data["y_val"],
-                        loss_fn=build_loss(pos_weight), seed=seed, verbose=False,
+                        loss_fn=build_loss(pos_weight), seed=seed, verbose=verbose,
                         **{k: config[k] for k in TRAIN_KEYS})
+    return model, history
 
+
+def run_config(config: dict, data: dict, seed: int) -> dict:
+    model, history = train_config(config, data, seed)
     probs = predict_proba(model, data["X_val"])
     curve = sweep("config", probs, data["y_val"].to_numpy())
     best = choose(curve)

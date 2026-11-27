@@ -6,3 +6,4 @@ Linear SVM (one-vs-rest),0.7926,0.2144,0.3375,"validation, 308 issues (leak-free
 MLP (weighted),0.4214,0.6401,0.5082,"validation, 308 issues (leak-free split, seed 42)",0.5,results/mlp/weighted_run_seed42.json
 Unweighted MLP (threshold 0.25),0.4983,0.6034,0.5459,"validation, 308 issues (threshold picked here)",0.25,results/mlp/chosen_threshold.json
 "MLP (best of search, threshold 0.425)",0.4878,0.6287,0.5493,"validation, 308 issues (config and threshold picked here)",0.425,results/mlp/search/best_config.json
+"MLP (final, threshold 0.425)",0.5021,0.6347,0.5606,"test, 616 issues (used once)",0.425,results/final/test_results.json

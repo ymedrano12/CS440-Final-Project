@@ -89,7 +89,7 @@ src/
 Python 3.11 is recommended (it matches the baseline's environment).
  
 ```console
-git clone https://github.com/USERNAME/CS440-Final-Project.git
+git clone https://github.com/ymedrano12/CS440-Final-Project.git
 cd CS440-Final-Project
 python -m venv .venv
 source .venv/bin/activate
@@ -123,6 +123,8 @@ python src/db_config.py
 This prints the path being used and the tables and views in the database. If the file is missing, the error says which source the path came from and how to fix it.
  
 The version of the database we used has 3,070 issues and 217 label columns in `nlbse_tool_competition_data_by_issue`. The saved split checks the row count and row order against the database and stops with an error if they don't match.
+
+Note: late into the semester of this project work, the database we were using was updated and re-provided to students using this competition for their project, which is why here it is denoted as 'v2'. Some notes about the database may be outdated from the original runs as a result. 
  
 ## Running the Code
  

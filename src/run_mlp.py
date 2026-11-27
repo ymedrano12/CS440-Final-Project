@@ -43,20 +43,26 @@ def check_one_hot(y_pred: np.ndarray, n_rows: int, n_labels: int) -> dict:
     }
 
 
-def load_fit_val(db=None, seed: int = 42) -> dict:
+def load_fit_val(db=None, seed: int = 42, include_test: bool = False) -> dict:
     df = load_competition_table(db)
     texts, y = issue_texts(df), label_matrix(df)
 
     train_idx, test_idx = load_split(df, seed)
     fit_idx, val_idx = split_validation(df, train_idx, seed=seed)
     print(f"Rows: fit {len(fit_idx)} | validation {len(val_idx)} | "
-          f"test {len(test_idx)} (held out)")
+          f"test {len(test_idx)} ({'evaluated' if include_test else 'held out'})")
 
-    _, X_fit, X_val = build_tfidf(texts, fit_idx, val_idx)
+    if include_test:
+        _, X_fit, X_val, X_test = build_tfidf(texts, fit_idx, val_idx, test_idx)
+    else:
+        _, X_fit, X_val = build_tfidf(texts, fit_idx, val_idx)
     print(f"TF-IDF features: {X_fit.shape[1]} | labels: {y.shape[1]}")
-    return {"fit_idx": fit_idx, "val_idx": val_idx, "test_idx": test_idx,
+    data = {"fit_idx": fit_idx, "val_idx": val_idx, "test_idx": test_idx,
             "X_fit": X_fit, "X_val": X_val, "y": y,
             "y_fit": y.iloc[fit_idx], "y_val": y.iloc[val_idx]}
+    if include_test:
+        data.update(X_test=X_test, y_test=y.iloc[test_idx])
+    return data
 
 
 def main():
